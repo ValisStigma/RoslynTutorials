@@ -1,0 +1,6 @@
+C:\Users\rafae\Documents\SA\Tests\HelloWorldExample\HelloWorldExample\bin\Debug\HelloWorldExample.exe.config
+C:\Users\rafae\Documents\SA\Tests\HelloWorldExample\HelloWorldExample\bin\Debug\HelloWorldExample.exe
+C:\Users\rafae\Documents\SA\Tests\HelloWorldExample\HelloWorldExample\bin\Debug\HelloWorldExample.pdb
+C:\Users\rafae\Documents\SA\Tests\HelloWorldExample\HelloWorldExample\obj\Debug\HelloWorldExample.csprojResolveAssemblyReference.cache
+C:\Users\rafae\Documents\SA\Tests\HelloWorldExample\HelloWorldExample\obj\Debug\HelloWorldExample.exe
+C:\Users\rafae\Documents\SA\Tests\HelloWorldExample\HelloWorldExample\obj\Debug\HelloWorldExample.pdb
