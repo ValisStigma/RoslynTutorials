@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -42,6 +39,23 @@ namespace SemanticsCS
             foreach (var ns in systemSymbol.GetNamespaceMembers())
             {
                 Console.WriteLine(ns.Name);
+            }
+            Console.Read();
+            var helloWorldString = root.DescendantNodes()
+                                       .OfType<LiteralExpressionSyntax>()
+                                       .First();
+            var literalInfo = model.GetTypeInfo(helloWorldString);
+            var stringTypeSymbol = (INamedTypeSymbol)literalInfo.Type;
+
+            Console.Clear();
+            foreach (var name in (from method in stringTypeSymbol.GetMembers()
+                                                              .OfType<IMethodSymbol>()
+                                  where method.ReturnType.Equals(stringTypeSymbol) &&
+                                        method.DeclaredAccessibility ==
+                                                   Accessibility.Public
+                                  select method.Name).Distinct())
+            {
+                Console.WriteLine(name);
             }
             Console.Read();
         }
