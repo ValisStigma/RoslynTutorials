@@ -28,6 +28,15 @@ namespace DateTimeOffestAnalyzerExample
 
         public override void Initialize(AnalysisContext context)
         {
+            context.RegisterCompilationStartAction((CompilationStartAnalysisContext ctx) =>
+            {
+                var requestedType = ctx.Compilation.GetTypeByMetadataName("Windows.Storage.StorageFile");
+                if (requestedType == null)
+                {
+                    return;
+                }
+                ctx.RegisterSyntaxNodeAction(AnalyzeDateTime, SyntaxKind.IdentifierName);
+            });
             context.RegisterSyntaxNodeAction(AnalyzeDateTime, SyntaxKind.IdentifierName);
         }
 
