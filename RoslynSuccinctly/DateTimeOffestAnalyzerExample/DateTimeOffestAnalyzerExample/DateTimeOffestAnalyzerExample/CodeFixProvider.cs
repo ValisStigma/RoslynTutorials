@@ -52,7 +52,7 @@ namespace DateTimeOffestAnalyzerExample
             context.RegisterCodeFix(
                 CodeAction.Create(
                     title: title,
-                    createChangedSolution: c => ReplaceDateTimeAsync(context.Document, node, c),
+                    createChangedDocument: c => ReplaceDateTimeAsync(context.Document, node, c),
                     equivalenceKey: title),
                 diagnostic);
         }
